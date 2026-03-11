@@ -45,7 +45,7 @@ class ItemSearchService
     public function getSearchResult()
     {
         // クエリをセット
-        $query = Item::query();
+        $query = Item::with('locations');
         // 商品コードの条件がある場合
         if(session('search_item_code') != null){
             // 条件を指定して取得

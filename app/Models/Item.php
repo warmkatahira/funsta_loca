@@ -32,20 +32,10 @@ class Item extends Model
     {
         return self::where('item_code', $item_code);
     }
-    // stocksテーブルとのリレーション
-    public function stocks()
+    // locationsとのリレーション
+    public function locations()
     {
-        return $this->hasMany(Stock::class, 'item_id', 'item_id');
-    }
-    // order_itemsとのリレーション
-    public function order_items()
-    {
-        return $this->hasMany(OrderItem::class, 'order_item_code', 'item_code');
-    }
-    // shipping_methodsテーブルとのリレーション
-    public function shipping_method()
-    {
-        return $this->belongsTo(ShippingMethod::class, 'shipping_method_id', 'shipping_method_id');
+        return $this->hasMany(Location::class, 'item_code', 'item_code');
     }
     // ダウンロード時のヘッダーを定義
     public static function downloadHeader()
@@ -55,6 +45,7 @@ class Item extends Model
             '商品JANコード',
             '商品名',
             '商品カラー',
+            'ロケーション数',
             '最終更新日時',
         ];
     }

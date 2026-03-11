@@ -35,6 +35,7 @@ class ItemDownloadService
                         $item->item_jan_code,
                         $item->item_name,
                         $item->item_color,
+                        $item->locations->count(),
                         CarbonImmutable::parse($item->updated_at)->isoFormat('Y年MM月DD日(ddd) HH:mm:ss'),
                     ];
                     // 書き込む
