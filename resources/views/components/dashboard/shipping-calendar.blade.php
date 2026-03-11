@@ -1,0 +1,1 @@
+<table id="shipping_calendar" class="bg-white w-5/12"></table>
