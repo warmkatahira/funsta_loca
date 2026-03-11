@@ -69,9 +69,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/themes/light-border.min.css" integrity="sha512-DiG+GczLaoJczcpFjhVy4sWA1rheh0I6zmlEc+ax7vrq2y/qTg80RtxDOueLcwBrC80IsiQapIgTi++lcGHPLg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <!-- ナビゲーションメニュー -->
-        @include('layouts.navigation')
-        <div class="pl-[265px] pr-3 pt-3 mb-3">
+        <!-- ナビゲーション（スマホ非表示） -->
+        <div class="hidden md:block">
+            @include('layouts.navigation')
+        </div>
+        <div class="pl-3 pr-3 pt-3 mb-3 md:pl-[265px]">
             <div class="flex flex-row items-center mb-3">
                 <!-- ページヘッダー -->
                 <x-page-header />

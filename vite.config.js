@@ -25,6 +25,8 @@ export default defineConfig({
                 'resources/sass/common.scss',
                 // 認証
                 'resources/js/auth/register.js',
+                // ダッシュボード
+                'resources/js/dashboard/dashboard.js',
                 // 商品
                 'resources/js/item/item/item.js',
                 'resources/js/item/item_upload/item_upload.js',

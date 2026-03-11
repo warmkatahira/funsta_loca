@@ -1,0 +1,1 @@
+import{s as t}from"./loading-CLXJ3Lsj.js";$(".select_file input[type=file]").on("change",function(){window.confirm("アップロードを実行しますか？")===!0&&(t(),$("#item_upload_form").submit()),$(".select_file").val(null)});
