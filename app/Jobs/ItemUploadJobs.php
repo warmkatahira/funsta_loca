@@ -13,6 +13,8 @@ use App\Models\Item;
 use App\Models\ItemImport;
 use App\Models\Job;
 use App\Models\ItemUploadHistory;
+use App\Models\Location;
+use App\Models\LocationImport;
 // 列挙
 use App\Enums\ItemUploadEnum;
 // 例外
@@ -94,7 +96,7 @@ class ItemUploadJobs implements ShouldQueue
                         throw new ItemUploadException('データが正しくない為、アップロードできませんでした。', $data['validation_error'], $nowDate, $item_upload_history);
                     }
                     // item_importsテーブルへ追加
-                    $this->createArrayImportData($data['create_data']);
+                    $this->createArrayImportData($data['create_data'], $data['locations']);
                 }
                 // itemsテーブルへ追加処理
                 return $this->procCreate($headers);
@@ -137,12 +139,14 @@ class ItemUploadJobs implements ShouldQueue
     {
         // 追加先のテーブルをクリア
         ItemImport::query()->delete();
+        LocationImport::query()->delete();
     }
 
     public function setArrayImportData($chunk, $headers, $chunk_size, $chunk_index)
     {
         // 配列をセット
         $create_data = [];
+        $locations = [];
         // 取得したレコードの分だけループ
         foreach ($chunk as $line){
             // UTF-8形式に変換した1行分のデータを取得
@@ -151,6 +155,21 @@ class ItemUploadJobs implements ShouldQueue
             $param = [];
             // 追加先テーブルのカラム名に合わせて配列を整理
             foreach($line as $key => $value){
+                // 商品コードを取得
+                if($key === '商品コード'){
+                    $item_code = $value;
+                }
+                // ロケ1〜ロケN だけ取得（ロケーションは無視される）
+                if(preg_match('/^ロケ\d+$/u', $key) && !empty($value)){
+                    $unique_key = $item_code . '_' . $value;
+                    if(!isset($location_keys[$unique_key])){
+                        $locations[] = [
+                            'item_code' => $item_code,
+                            'location'  => $value,
+                        ];
+                        $location_keys[$unique_key] = true;
+                    }
+                }
                 // 英語カラムを定義している配列から取得
                 $en_column = Item::column_en_change($key);
                 // カラムが空ではない場合
@@ -170,7 +189,7 @@ class ItemUploadJobs implements ShouldQueue
         if(!empty($validation_error)){
             return compact('validation_error');
         }
-        return compact('create_data', 'validation_error');
+        return compact('create_data', 'validation_error', 'locations');
     }
 
     public function valueAdjustment($key, $value)
@@ -196,7 +215,7 @@ class ItemUploadJobs implements ShouldQueue
         $rules = [];
         // バリデーションルールを定義
         foreach($headers as $column){
-            switch ($column){
+            switch($column){
                 case 'item_code':
                     $rules += ['*.'.$column => 'required|max:255'];
                     break;
@@ -248,22 +267,26 @@ class ItemUploadJobs implements ShouldQueue
         return $validation_error;
     }
 
-    public function createArrayImportData($create_data)
+    public function createArrayImportData($create_data, $locations)
     {
         // 追加用の配列に入っている情報をテーブルに追加
         ItemImport::insert($create_data);
+        LocationImport::insert($locations);
     }
 
     public function procCreate($headers)
     {
         // 追加先のテーブルをクリア
         Item::query()->delete();
+        Location::query()->delete();
         // itemsに存在しないレコードを取得
         $create_item = ItemImport::doesntHave('item')->select(array_map(function ($column){
             return $column;
         }, $headers))->get()->toArray();
         // itemsテーブルに追加
         Item::upsert($create_item, 'item_code');
+        // locationsテーブルに追加
+        Location::upsert(LocationImport::all()->toArray(), ['item_code', 'location']);
         return count($create_item);
     }
 
