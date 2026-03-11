@@ -5,10 +5,10 @@ namespace App\Enums;
 enum SystemEnum
 {
     // 顧客名
-    const CUSTOMER_NAME_JP  = 'BEAUTEX様';
-    const CUSTOMER_NAME_EN  = 'beautex';
+    const CUSTOMER_NAME_JP  = 'Fun Standard様';
+    const CUSTOMER_NAME_EN  = 'funstandard';
     // システム名
-    const SYSTEM_NAME_JP            = '出荷システム';
+    const SYSTEM_NAME_JP            = 'ロケ確認アプリ';
     // ページネーションの値を定義
     const PAGINATE_DEFAULT = 1000;
     const PAGINATE_OPERATION_LOG = 200;

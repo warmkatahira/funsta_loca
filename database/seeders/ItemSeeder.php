@@ -6,9 +6,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 // モデル
 use App\Models\Item;
-// その他
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 
 class ItemSeeder extends Seeder
 {
@@ -17,10 +14,23 @@ class ItemSeeder extends Seeder
      */
     public function run(): void
     {
-        $path = database_path('seeders/sql/item.sql');
-        // SQLファイルの読み込み
-        $sql = File::get($path);
-        // SQL実行
-        DB::unprepared($sql);
+        Item::create([
+            'item_code'     => 'P0169TBPSP-CBK',
+            'item_jan_code' => '4573280638899',
+            'item_name'     => 'HAZUKI 宅配ボックス',
+            'item_color'    => 'チャコールブラック',
+        ]);
+        Item::create([
+            'item_code'     => 'P0169TBPSP-MGY',
+            'item_jan_code' => '4573280642780',
+            'item_name'     => 'HAZUKI 宅配ボックス',
+            'item_color'    => 'ガンメタルグレー',
+        ]);
+        Item::create([
+            'item_code'     => 'P0316TBD02-BEG',
+            'item_jan_code' => '4573280644968',
+            'item_name'     => 'ポスト付き宅配ボックス「デュオ」TBD-02',
+            'item_color'    => 'ベージュ',
+        ]);
     }
 }

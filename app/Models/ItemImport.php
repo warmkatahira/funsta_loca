@@ -7,24 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class ItemImport extends Model
 {
     // 主キーカラムを変更
-    protected $primaryKey = 'item_import_id';
+    protected $primaryKey = 'item_code';
+    // オートインクリメント無効化
+    public $incrementing = false;
     // 操作可能なカラムを定義
     protected $fillable = [
         'item_code',
         'item_jan_code',
         'item_name',
-        'item_category_1',
-        'item_category_2',
-        'model_jan_code',
-        'exp_start_position',
-        'lot_1_start_position',
-        'lot_1_length',
-        'lot_2_start_position',
-        'lot_2_length',
-        's_power_code',
-        's_power_code_start_position',
-        'is_stock_managed',
-        'sort_order',
+        'item_color',
     ];
     // itemsテーブルとのリレーション
     public function item()

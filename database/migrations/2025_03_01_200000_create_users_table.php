@@ -21,14 +21,12 @@ return new class extends Migration
             $table->string('password');
             $table->boolean('status')->default(0);
             $table->string('role_id', 10)->default('user');
-            $table->string('company_id', 10);
             $table->string('profile_image_file_name', 50)->default('no_image.png');
             $table->timestamp('last_login_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
             // 外部キー
             $table->foreign('role_id')->references('role_id')->on('roles')->cascadeOnUpdate();
-            $table->foreign('company_id')->references('company_id')->on('companies')->cascadeOnUpdate();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table){

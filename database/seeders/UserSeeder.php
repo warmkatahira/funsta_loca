@@ -22,7 +22,15 @@ class UserSeeder extends Seeder
             'password' => bcrypt('katahira134'),
             'status' => 1,
             'role_id' => 'admin',
-            'company_id' => 'warm',
+        ]);
+        User::create([
+            'user_id' => 'user',
+            'last_name' => 'ユーザー',
+            'first_name' => '',
+            'email' => 'warm@warm.co.jp',
+            'password' => bcrypt('user'),
+            'status' => 1,
+            'role_id' => 'user',
         ]);
     }
 }

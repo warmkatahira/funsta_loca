@@ -12,24 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('item_imports', function (Blueprint $table){
-            $table->increments('item_import_id');
-            $table->string('item_code', 255);
-            $table->string('item_jan_code', 13)->nullable();
-            $table->string('item_name', 255)->nullable();
-            $table->string('item_category_1', 20)->nullable();
-            $table->string('item_category_2', 20)->nullable();
-            $table->string('model_jan_code', 13)->nullable();
-            $table->unsignedInteger('exp_start_position')->nullable();
-            $table->unsignedInteger('lot_1_start_position')->nullable();
-            $table->unsignedInteger('lot_1_length')->nullable();
-            $table->unsignedInteger('lot_2_start_position')->nullable();
-            $table->unsignedInteger('lot_2_length')->nullable();
-            $table->unsignedInteger('s_power_code')->nullable();
-            $table->unsignedInteger('s_power_code_start_position')->nullable();
-            $table->boolean('is_stock_managed')->nullable();
-            $table->string('country_of_origin', 10)->nullable();
-            $table->string('hs_code', 10)->nullable();
-            $table->unsignedInteger('sort_order')->nullable();
+            $table->string('item_code', 255)->primary();
+            $table->string('item_jan_code', 13);
+            $table->string('item_name', 255);
+            $table->string('item_color', 255)->nullable();
             $table->timestamps();
         });
         // 文字セット・照合順序を変更

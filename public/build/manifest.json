@@ -1,10 +1,6 @@
 {
-  "_audio-BXh7UfBs.js": {
-    "file": "assets/audio-BXh7UfBs.js",
-    "name": "audio"
-  },
   "resources/css/app.css": {
-    "file": "assets/app-B4sGLwdw.css",
+    "file": "assets/app-C1oyx8QJ.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -30,15 +26,9 @@
     "isEntry": true
   },
   "resources/js/checkbox.js": {
-    "file": "assets/checkbox-DhnS4dE9.js",
+    "file": "assets/checkbox-CnZtsT_L.js",
     "name": "checkbox",
     "src": "resources/js/checkbox.js",
-    "isEntry": true
-  },
-  "resources/js/dashboard/dashboard.js": {
-    "file": "assets/dashboard-DcqmxOml.js",
-    "name": "dashboard",
-    "src": "resources/js/dashboard/dashboard.js",
     "isEntry": true
   },
   "resources/js/dropdown.js": {
@@ -83,34 +73,6 @@
     "src": "resources/js/loading.js",
     "isEntry": true
   },
-  "resources/js/order/order_detail/order_detail.js": {
-    "file": "assets/order_detail-D2uyEQ6o.js",
-    "name": "order_detail",
-    "src": "resources/js/order/order_detail/order_detail.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/order/order_import/order_import.js": {
-    "file": "assets/order_import-Dzzzb7mZ.js",
-    "name": "order_import",
-    "src": "resources/js/order/order_import/order_import.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/order/order_mgt/order_mgt.js": {
-    "file": "assets/order_mgt-fkMSxdWb.js",
-    "name": "order_mgt",
-    "src": "resources/js/order/order_mgt/order_mgt.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js",
-      "resources/js/checkbox.js"
-    ]
-  },
   "resources/js/profile/profile.js": {
     "file": "assets/profile-DXd45RBV.js",
     "name": "profile",
@@ -135,135 +97,6 @@
     "src": "resources/js/search_date.js",
     "isEntry": true
   },
-  "resources/js/setting/auto_process/auto_process.js": {
-    "file": "assets/auto_process-Hmlloy0e.js",
-    "name": "auto_process",
-    "src": "resources/js/setting/auto_process/auto_process.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/setting/auto_process/auto_process_condition.js": {
-    "file": "assets/auto_process_condition-DtR4pLVE.js",
-    "name": "auto_process_condition",
-    "src": "resources/js/setting/auto_process/auto_process_condition.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/setting/base_shipping_method/base_shipping_method.js": {
-    "file": "assets/base_shipping_method-CVt5Qh8y.js",
-    "name": "base_shipping_method",
-    "src": "resources/js/setting/base_shipping_method/base_shipping_method.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/setting/order_category/order_category.js": {
-    "file": "assets/order_category-BlZ8q2NZ.js",
-    "name": "order_category",
-    "src": "resources/js/setting/order_category/order_category.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/setting/shipper/shipper.js": {
-    "file": "assets/shipper-DyEresBz.js",
-    "name": "shipper",
-    "src": "resources/js/setting/shipper/shipper.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/setting/shipping_base/shipping_base.js": {
-    "file": "assets/shipping_base-CCD9MmGW.js",
-    "name": "shipping_base",
-    "src": "resources/js/setting/shipping_base/shipping_base.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/shipping/shipping_inspection/shipping_inspection.js": {
-    "file": "assets/shipping_inspection-CD0aXWIj.js",
-    "name": "shipping_inspection",
-    "src": "resources/js/shipping/shipping_inspection/shipping_inspection.js",
-    "isEntry": true,
-    "imports": [
-      "_audio-BXh7UfBs.js",
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/shipping/shipping_mgt/shipping_mgt.js": {
-    "file": "assets/shipping_mgt-CuPRIh1s.js",
-    "name": "shipping_mgt",
-    "src": "resources/js/shipping/shipping_mgt/shipping_mgt.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js",
-      "resources/js/checkbox.js"
-    ]
-  },
-  "resources/js/shipping/shipping_work_end/shipping_work_end.js": {
-    "file": "assets/shipping_work_end-CSUlkSTC.js",
-    "name": "shipping_work_end",
-    "src": "resources/js/shipping/shipping_work_end/shipping_work_end.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/stock/input_stock_operation/input_stock_operation.js": {
-    "file": "assets/input_stock_operation-DjAyat7j.js",
-    "name": "input_stock_operation",
-    "src": "resources/js/stock/input_stock_operation/input_stock_operation.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/stock/receiving_inspection/receiving_inspection.js": {
-    "file": "assets/receiving_inspection-DiCKHb6f.js",
-    "name": "receiving_inspection",
-    "src": "resources/js/stock/receiving_inspection/receiving_inspection.js",
-    "isEntry": true,
-    "imports": [
-      "_audio-BXh7UfBs.js",
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/stock/stock/stock.js": {
-    "file": "assets/stock-C_s7KvT6.js",
-    "name": "stock",
-    "src": "resources/js/stock/stock/stock.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/system_admin/base/base.js": {
-    "file": "assets/base-A3toJgYF.js",
-    "name": "base",
-    "src": "resources/js/system_admin/base/base.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
-  "resources/js/system_admin/holiday/holiday.js": {
-    "file": "assets/holiday-Dhoj2_wP.js",
-    "name": "holiday",
-    "src": "resources/js/system_admin/holiday/holiday.js",
-    "isEntry": true,
-    "imports": [
-      "resources/js/loading.js"
-    ]
-  },
   "resources/js/system_admin/user/user.js": {
     "file": "assets/user-CkpndYND.js",
     "name": "user",
@@ -276,11 +109,6 @@
   "resources/sass/common.scss": {
     "file": "assets/common-Qa2haRUR.css",
     "src": "resources/sass/common.scss",
-    "isEntry": true
-  },
-  "resources/sass/dashboard/dashboard.scss": {
-    "file": "assets/dashboard-B9i60jde.css",
-    "src": "resources/sass/dashboard/dashboard.scss",
     "isEntry": true
   },
   "resources/sass/dropdown.scss": {
@@ -303,11 +131,6 @@
     "src": "resources/sass/navigation.scss",
     "isEntry": true
   },
-  "resources/sass/order/document/hikiatemachi_list.scss": {
-    "file": "assets/hikiatemachi_list-BxBkZBTD.css",
-    "src": "resources/sass/order/document/hikiatemachi_list.scss",
-    "isEntry": true
-  },
   "resources/sass/profile/profile.scss": {
     "file": "assets/profile-sn2S9o_Z.css",
     "src": "resources/sass/profile/profile.scss",
@@ -316,26 +139,6 @@
   "resources/sass/profile/profile_image.scss": {
     "file": "assets/profile_image-DRJ8DOA0.css",
     "src": "resources/sass/profile/profile_image.scss",
-    "isEntry": true
-  },
-  "resources/sass/shipping/document/delivery_note.scss": {
-    "file": "assets/delivery_note-DDkFhT4_.css",
-    "src": "resources/sass/shipping/document/delivery_note.scss",
-    "isEntry": true
-  },
-  "resources/sass/shipping/document/document_common.scss": {
-    "file": "assets/document_common-Bw8twMqI.css",
-    "src": "resources/sass/shipping/document/document_common.scss",
-    "isEntry": true
-  },
-  "resources/sass/shipping/document/total_picking_list.scss": {
-    "file": "assets/total_picking_list-DoyUmeAv.css",
-    "src": "resources/sass/shipping/document/total_picking_list.scss",
-    "isEntry": true
-  },
-  "resources/sass/stock/receiving_inspection/receiving_inspection.scss": {
-    "file": "assets/receiving_inspection-CxvQj0Zy.css",
-    "src": "resources/sass/stock/receiving_inspection/receiving_inspection.scss",
     "isEntry": true
   },
   "resources/sass/theme.scss": {

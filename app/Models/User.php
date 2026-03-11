@@ -30,7 +30,6 @@ class User extends Authenticatable
         'password',
         'status',
         'role_id',
-        'company_id',
         'profile_image_file_name',
         'last_login_at',
     ];
@@ -48,11 +47,6 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::Class, 'role_id', 'role_id');
-    }
-    // companiesテーブルとのリレーション
-    public function company()
-    {
-        return $this->belongsTo(Company::Class, 'company_id', 'company_id');
     }
     // 「last_name」と「first_name」を結合して返すアクセサ
     public function getFullNameAttribute(): string

@@ -25,41 +25,11 @@ export default defineConfig({
                 'resources/sass/common.scss',
                 // 認証
                 'resources/js/auth/register.js',
-                // ダッシュボード
-                'resources/js/dashboard/dashboard.js',
-                'resources/sass/dashboard/dashboard.scss',
-                // 受注
-                'resources/js/order/order_import/order_import.js',
-                'resources/js/order/order_mgt/order_mgt.js',
-                'resources/js/order/order_detail/order_detail.js',
-                // 出荷
-                'resources/js/shipping/shipping_mgt/shipping_mgt.js',
-                'resources/js/shipping/shipping_inspection/shipping_inspection.js',
-                'resources/js/shipping/shipping_work_end/shipping_work_end.js',
-                // 帳票
-                'resources/sass/shipping/document/document_common.scss',
-                'resources/sass/order/document/hikiatemachi_list.scss',
-                'resources/sass/shipping/document/total_picking_list.scss',
-                'resources/sass/shipping/document/delivery_note.scss',
                 // 商品
                 'resources/js/item/item/item.js',
                 'resources/js/item/item_upload/item_upload.js',
-                // 在庫
-                'resources/js/stock/stock/stock.js',
-                'resources/js/stock/input_stock_operation/input_stock_operation.js',
-                'resources/js/stock/receiving_inspection/receiving_inspection.js',
-                'resources/sass/stock/receiving_inspection/receiving_inspection.scss',
-                // 設定
-                'resources/js/setting/shipping_base/shipping_base.js',
-                'resources/js/setting/base_shipping_method/base_shipping_method.js',
-                'resources/js/setting/shipper/shipper.js',
-                'resources/js/setting/order_category/order_category.js',
-                'resources/js/setting/auto_process/auto_process.js',
-                'resources/js/setting/auto_process/auto_process_condition.js',
                 // システム管理
-                'resources/js/system_admin/base/base.js',
                 'resources/js/system_admin/user/user.js',
-                'resources/js/system_admin/holiday/holiday.js',
                 // プロフィール
                 'resources/js/profile/profile.js',
                 'resources/sass/profile/profile.scss',

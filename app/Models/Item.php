@@ -7,25 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     // 主キーカラムを変更
-    protected $primaryKey = 'item_id';
+    protected $primaryKey = 'item_code';
+    // オートインクリメント無効化
+    public $incrementing = false;
     // 操作可能なカラムを定義
     protected $fillable = [
         'item_code',
         'item_jan_code',
         'item_name',
-        'item_category_1',
-        'item_category_2',
-        'model_jan_code',
-        'exp_start_position',
-        'lot_1_start_position',
-        'lot_1_length',
-        'lot_2_start_position',
-        'lot_2_length',
-        's_power_code',
-        's_power_code_start_position',
-        'is_stock_managed',
-        'item_image_file_name',
-        'sort_order',
+        'item_color',
     ];
     // 全てのレコードを取得
     public static function getAll()
@@ -64,18 +54,7 @@ class Item extends Model
             '商品コード',
             '商品JANコード',
             '商品名',
-            '商品カテゴリ1',
-            '代表JANコード',
-            'EXP開始位置',
-            'LOT1開始位置',
-            'LOT1桁数',
-            'LOT2開始位置',
-            'LOT2桁数',
-            'S-POWERコード',
-            'S-POWERコード開始位置',
-            '在庫管理',
-            '並び順',
-            '商品画像',
+            '商品カラー',
             '最終更新日時',
         ];
     }
