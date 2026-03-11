@@ -34,7 +34,7 @@ $(document).on("change", "#item_jan_code", function(){
                                 <br>
                                 ${item['item_name']}${item['item_color'] ? ' / ' + item['item_color'] : ''}
                             </button>
-                            <div class="accordion-body hidden grid grid-cols-12 gap-2 p-3">
+                            <div class="accordion-body grid grid-cols-12 gap-2 p-3" style="display:none">
                                 ${locationsHtml}
                             </div>
                         </div>
@@ -52,5 +52,5 @@ $(document).on("change", "#item_jan_code", function(){
 
 // アコーディオンの開閉
 $(document).on('click', '.accordion-toggle', function() {
-    $(this).next('.accordion-body').toggleClass('hidden');
+    $(this).next('.accordion-body').toggle();
 });
