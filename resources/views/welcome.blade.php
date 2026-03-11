@@ -48,7 +48,7 @@
         <x-alert/>
         <div class="flex mt-3">
             @guest
-                <a href="{{ route('login') }}" class="w-full md:w-32 md:ml-auto text-center py-5 bg-theme-main md:mr-3">ログイン</a>
+                <a href="{{ route('login') }}" class="w-full md:w-32 mt-20 md:mt-0 md:ml-auto text-center py-5 bg-theme-main md:mr-3">ログイン</a>
             @endauth
         </div>
     </body>
