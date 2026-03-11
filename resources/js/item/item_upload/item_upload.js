@@ -4,9 +4,7 @@ import start_loading from '../../loading';
 $('.select_file input[type=file]').on("change",function(){
     // 処理を実行するか確認
     const result = window.confirm(
-        "以下のアップロードを実行しますか？\n\n" +
-        "対象：" + $('#upload_target option:selected').text() + "\n" +
-        "タイプ：" + $('#upload_type option:selected').text()
+        "アップロードを実行しますか？"
     );
     // 「はい」が押下されたらsubmit、「いいえ」が押下されたら処理キャンセル
     if(result === true){

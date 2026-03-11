@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        /* Schema::create('jobs', function (Blueprint $table){
+        Schema::create('jobs', function (Blueprint $table){
             $table->increments('id');
             $table->string('queue')->index();
             $table->longText('payload');
             $table->unsignedTinyInteger('attempts');
             $table->unsignedInteger('user_no')->nullable();
-            $table->text('file_path')->nullable();
+            $table->text('upload_file_path')->nullable();
             $table->unsignedInteger('reserved_at')->nullable();
             $table->unsignedInteger('available_at');
             $table->unsignedInteger('created_at');
             $table->timestamp('updated_at')->nullable();
-        }); */
+        });
 
         Schema::create('job_batches', function (Blueprint $table){
             $table->string('id')->primary();

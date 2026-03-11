@@ -52,23 +52,9 @@ class Item extends Model
     // 英語カラム変換用
     const EN_CHANGE_LIST = [
         '商品コード'            => 'item_code',
-        '商品JANコード'         => 'item_jan_code',
+        'JANコード'             => 'item_jan_code',
         '商品名'                => 'item_name',
-        '商品カテゴリ1'         => 'item_category_1',
-        '商品カテゴリ'          => 'item_category_1',
-        'ブランド'              => 'item_category_2',
-        '代表JANコード'         => 'model_jan_code',
-        'EXP開始位置'           => 'exp_start_position',
-        'LOT1開始位置'          => 'lot_1_start_position',
-        'LOT1桁数'              => 'lot_1_length',
-        'LOT2開始位置'          => 'lot_2_start_position',
-        'LOT2桁数'              => 'lot_2_length',
-        'S-POWERコード'         => 's_power_code',
-        'S-POWERコード開始位置' => 's_power_code_start_position',
-        '在庫管理'              => 'is_stock_managed',
-        '原産国'                => 'country_of_origin',
-        'HSコード'              => 'hs_code',
-        '並び順'                => 'sort_order',
+        '商品カラー'            => 'item_color',
     ];
     // カラム名を英語に変換
     public static function column_en_change($column): string

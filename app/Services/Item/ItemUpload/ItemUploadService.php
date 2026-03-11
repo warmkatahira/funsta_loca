@@ -36,20 +36,14 @@ class ItemUploadService
     }
 
     // インポートしたデータのヘッダーを確認
-    public function checkHeader($save_file_full_path, $upload_type)
+    public function checkHeader($save_file_full_path)
     {
         // 全データを取得
         $all_line = (new FastExcel)->import($save_file_full_path);
         // インポートしたデータのヘッダーを取得
-        $data_header = array_keys(mb_convert_encoding($all_line[0], 'UTF-8', 'ASCII, JIS, UTF-8, SJIS-win'));
-        // ファイルタイプを判別（先方からの商品マスタなのか、smoothの商品マスタなのか）
-        if($data_header[0] === '商品コード'){
-            $file_type = ItemUploadEnum::PUSH_COLOR_ITEM_MASTER;
-        }else{
-            $file_type = ItemUploadEnum::SMOOTH_ITEM_MASTER;
-        }
+        $data_header = array_keys($all_line[0]);
         // 必須ヘッダーを取得
-        $required_header = ItemUploadEnum::get_required_header($upload_type, $file_type);
+        $required_header = ItemUploadEnum::UPLOAD_REQUIRED_HEADER;
         // チェックするカラムの分だけループ処理
         foreach($required_header as $column){
             // カラムが存在するか確認
@@ -59,7 +53,6 @@ class ItemUploadService
                 throw new \RuntimeException($result);
             }
         }
-        return $file_type;
     }
 
     // 配列の値が存在しているか確認

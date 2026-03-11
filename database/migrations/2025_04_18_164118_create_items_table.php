@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table){
             $table->string('item_code', 255)->primary();
-            $table->string('item_jan_code', 13);
+            $table->string('item_jan_code', 13)->nullable();
             $table->string('item_name', 255);
             $table->string('item_color', 255)->nullable();
             $table->timestamps();
