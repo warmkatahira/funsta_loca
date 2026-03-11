@@ -1,7 +1,7 @@
 <div id="navigation-bar">
     <div id="navigation_top_div" class="flex flex-col sticky top-0 z-[999] bg-theme-sub">
         <!-- ロゴ -->
-        <img id="logo" src="{{ asset('image/smooth_logo.svg') }}">
+        <img id="logo" src="{{ asset('image/system_logo.svg') }}">
         <!-- 顧客名 -->
         <p class="text-center pt-2 cursor-default">{{ SystemEnum::CUSTOMER_NAME_JP }}</p>
         <!-- システム名 -->

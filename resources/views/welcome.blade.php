@@ -52,8 +52,5 @@
                 <a href="{{ route('register') }}" class="ml-10 mr-10"><img src="{{ asset('image/register_button.svg') }}" class="w-32"></a>
             @endauth
         </div>
-        <div class="text-center">
-            <img src="{{ asset('image/smooth_logo.svg') }}" class="welcome_logo">
-        </div>
     </body>
 </html>
