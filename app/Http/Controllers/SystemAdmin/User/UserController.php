@@ -14,7 +14,7 @@ class UserController extends Controller
         // ページヘッダーをセッションに格納
         session(['page_header' => 'ユーザー']);
         // ユーザーを取得
-        $users = User::getAll()->with('role')->with('company')->get();
+        $users = User::getAll()->with('role')->get();
         return view('system_admin.user.index')->with([
             'users' => $users,
         ]);

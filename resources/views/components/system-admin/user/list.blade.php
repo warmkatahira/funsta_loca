@@ -10,7 +10,6 @@
                     <th class="font-thin py-1 px-2 text-center">メールアドレス</th>
                     <th class="font-thin py-1 px-2 text-center">ステータス</th>
                     <th class="font-thin py-1 px-2 text-center">権限</th>
-                    <th class="font-thin py-1 px-2 text-center">会社名</th>
                     <th class="font-thin py-1 px-2 text-center">最終ログイン日時</th>
                 </tr>
             </thead>
@@ -31,7 +30,6 @@
                         <td class="py-1 px-2 border">{{ $user->email }}</td>
                         <td class="py-1 px-2 border text-center">{{ $user->status_text }}</td>
                         <td class="py-1 px-2 border">{{ $user->role->role_name }}</td>
-                        <td class="py-1 px-2 border">{{ $user->company->company_name }}</td>
                         <td class="py-1 px-2 border">
                             @if($user->last_login_at)
                                 {{ CarbonImmutable::parse($user->last_login_at)->isoFormat('YYYY年MM月DD日(ddd) HH時mm分ss秒').'('.CarbonImmutable::parse($user->last_login_at)->diffForHumans().')' }}
