@@ -25,7 +25,7 @@ $(document).on("change", "#item_jan_code", function(){
                     });
                     // ロケーションが無い場合
                     if(!locationsHtml){
-                        locationsHtml = `<p class="text-sm col-span-12">ロケーションなし</p>`;
+                        locationsHtml = `<p class="text-2xl col-span-12">ロケーションなし</p>`;
                     }
                     $('#result').append(`
                         <div class="border border-gray-200 rounded mb-2 bg-white">
